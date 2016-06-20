@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="author" content="erictian">
+    <meta name="description" content="YY直播北京朗园发布会">
+    <title>YY直播北京朗园发布会</title>
+    <!-- build:css css/style.css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- endbuild -->
+</head>
+<body>
+    <div id="loading" class="loading bg active">
+        <div id="load_text" class="load-text">0%</div>
+    </div>
+    <div id="wrapper" class="wrapper"></div>
+    <script id="tpl" type="text/html">
+        <div id="container" class="container">
+            <section class="page page-1 bg active" data-door="true" data-prev="null" data-next="page-2" data-left="0%" data-year="2008">
+                <div class="title bg"></div>
+                <div class="doorframe bg"></div>
+                <div class="door bg"></div>
+                <div class="hand bg"></div>
+            </section>
+            <section class="page page-2 bg hide" data-prev="page-1" data-next="page-3" data-left="9%" data-year="2008">
+                <div class="title bg"></div>
+                <div class="hand bg"></div>
+            </section>
+            <section class="page page-3 bg hide" data-door="true" data-prev="page-2" data-next="page-4" data-left="18%" data-year="2012">
+                <div class="title bg"></div>
+                <div class="doorframe bg"></div>
+                <div class="door bg"></div>
+                <div class="hand bg"></div>
+            </section>
+            <section class="page page-4 bg hide" data-prev="page-3" data-next="page-5" data-left="27%" data-year="2012">
+                <div class="title bg"></div>
+                <div class="hand bg"></div>
+            </section>
+            <section class="page page-5 bg hide" data-door="true" data-prev="page-4" data-next="page-6" data-left="36%" data-year="2014">
+                <div class="title bg"></div>
+                <div class="doorframe bg"></div>
+                <div class="door bg"></div>
+                <div class="hand bg"></div>
+            </section>
+            <section class="page page-6 bg hide" data-prev="page-5" data-next="page-7" data-left="45%" data-year="2014">
+                <div class="title bg"></div>
+                <div class="hand bg"></div>
+            </section>
+            <section class="page page-7 bg hide" data-door="true" data-prev="page-6" data-next="page-8" data-left="54%" data-year="2015">
+                <div class="title bg"></div>
+                <div class="doorframe bg"></div>
+                <div class="door bg"></div>
+                <div class="hand bg"></div>
+            </section>
+            <section class="page page-8 bg end hide" data-prev="page-7" data-next="end-wrap" data-left="63%" data-year="2015">
+                <div class="title bg"></div>
+                <div class="hand bg"></div>
+            </section>
+        </div>
+        <div id="gear_wrap" class="gear-wrap bg pause cleafix">
+            <div id="gears" class="gears">
+                <div class="gear gear-lg gear-bg"></div>
+                <div class="gear gear-sm gear-right"></div>
+                <div class="gear gear-md gear-left"></div>
+            </div>
+            <div id="gear_progress" class="gear-progress">
+                <div class="gear gear-sm gear-top"></div>
+                <div class="gear gear-sm gear-bottom"></div>
+                <div id="milestone" class="milestone bg">2008</div>
+            </div>
+        </div>
+        <div id="end_wrap" class="end-wrap bg hide">
+            <div class="airplane bg"></div>
+            <div class="invitation-sm invitation-1 bg"></div>
+            <div class="invitation-sm invitation-2 bg"></div>
+            <div class="invitation-sm invitation-3 bg"></div>
+            <div class="invitation-sm invitation-4 bg"></div>
+            <div id="invitation" class="invitation bg"></div>
+            <div id="time_address" class="time-address bg hide"></div>
+            <div id="btn_share" class="btn btn-share bg"></div>
+            <div id="btn_back" class="btn btn-back bg"></div>
+        </div>
+        <div id="share_wrap" class="share-wrap hide">点击右上角分享，敬请关注YY直播</div>
+        <div id="music" class="music playing">
+            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 64 64">
+                <path d="M32.01 15.02c-9.39 0-17 7.61-17 17 0 9.388 7.61 17 17 17s17-7.612 17-17c0-9.39-7.612-17-17-17zm0 32c-8.285 0-15-6.716-15-15 0-8.284 6.715-15 15-15 8.283 0 15 6.716 15 15 0 8.284-6.717 15-15 15zm7.144-24.97c-.052-.007-.1-.03-.154-.03-.147 0-.284.035-.41.092l-9.677 1.88c-.082.016-.152.058-.227.092-.046.015-.09.032-.132.053-.017.01-.032.02-.048.033-.226.132-.388.344-.456.604-.004.012-.004.024-.007.036-.016.07-.043.135-.043.21v9.142c-1.057-.296-2.376-.125-3.584.58-2.02 1.182-2.95 3.384-2.074 4.917.875 1.534 3.223 1.82 5.242.64 1.646-.963 2.548-2.598 2.36-4.002.026-.09.056-.18.056-.28V25.815l8-1.554v7.902c-1.057-.296-2.376-.125-3.584.58-2.02 1.182-2.95 3.384-2.074 4.917.875 1.534 3.223 1.82 5.242.64 1.646-.963 2.548-2.598 2.36-4.002.026-.09.056-.18.056-.28v-11c0-.018-.01-.035-.01-.054 0-.037.014-.073.01-.11-.04-.467-.4-.78-.846-.803zM26.528 38.448c-1.01.59-2.065.654-2.357.143-.29-.512.292-1.405 1.303-1.996 1.01-.59 2.065-.654 2.356-.143.29.514-.292 1.406-1.302 1.997zm10-2c-1.01.59-2.065.654-2.357.143-.29-.512.292-1.405 1.303-1.996 1.01-.59 2.065-.654 2.356-.143.29.514-.292 1.406-1.302 1.997z"></path>
+            </svg>
+            <span></span>
+        </div>
+        <audio id="audio" class="hide" src="" loop></audio>
+    </script>
+    <!-- build:zeptojs js/zepto.js -->
+    <script src="js/zepto/zepto.js"></script>
+    <script src="js/zepto/ajax.js"></script>
+    <script src="js/zepto/event.js"></script>
+    <!-- endbuild -->
+    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <!-- build:js js/index.js -->
+    <script src="js/motion.js"></script>
+    <script src="js/index.js"></script>
+    <!-- endbuild -->
+    <script>
+        // 分享参数
+        var SHARE_OBJ = {
+            title: 'YY直播北京朗园发布会',
+            desc: 'YY直播北京朗园发布会',
+            link: location.href,
+            imgUrl: 'http://h5.html5dw.com/warcraft-concert/images/thumbnail.jpg',
+            success: function () { }
+        };
+
+        wx.config({
+            debug: false,
+            appId: 'wxc277cec6a0f458d9',
+            timestamp: '1466235397',
+            nonceStr: 'TJvtBOut5UEM6man',
+            signature: 'fb0f29a3d679b981d1bb180e330ec21b1642c2ee',
+            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone']
+        });
+
+        wx.ready(function () {
+            // 分享到朋友圈
+            wx.onMenuShareTimeline(SHARE_OBJ);
+            // 分享给朋友
+            wx.onMenuShareAppMessage(SHARE_OBJ);
+            // 分享到QQ
+            wx.onMenuShareQQ(SHARE_OBJ);
+            // 分享到腾讯微博
+            wx.onMenuShareWeibo(SHARE_OBJ);
+            // 分享到QQ空间
+            wx.onMenuShareQZone(SHARE_OBJ);
+        });
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement('script');
+            hm.src = '//hm.baidu.com/hm.js?ddec433b11607be3a27563e3b4d41877';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>
