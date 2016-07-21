@@ -41,7 +41,7 @@ gulp.task('image', function () {
 
 // 整体打包
 gulp.task('dist', ['less', 'image'], function () {
-    gulp.src(['*.mp4', '*.mp3'])
+    gulp.src(['*.mp4', '*.mp3', '*.m4a', '*.aac'])
         .pipe(gulp.dest('dist'));
 
     return gulp.src('*.html')

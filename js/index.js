@@ -11,6 +11,7 @@ $(function() {
         'images/doorframe_1.png',
         'images/gif_title_1.png',
         'images/illustration_1.gif',
+        'images/arrow.png',
         'images/hand.png',
         'images/title_2.png',
         'images/door_2.png',
@@ -36,6 +37,7 @@ $(function() {
         'images/invitation_4.png',
         'images/invitation.png',
         'images/time_address.png',
+        'images/btn_play.png',
         'images/btn_share.png',
         'images/btn_back.png',
         'images/bg_2.jpg'
@@ -52,6 +54,12 @@ $(function() {
                 $wrapper = $('#wrapper');
             $wrapper.html($('#tpl').html());
             $loading.removeClass('active');
+
+            var $audio = $('#audio'),
+                audio = $audio[0];
+            audio.src = 'bgm.aac';
+            audio.play();
+
             setTimeout(function() {
                 $loading.addClass('hide');
                 $wrapper.addClass('active');
@@ -60,7 +68,8 @@ $(function() {
                 initListener();
                 setTimeout(function () {
                     $wrapper.find('.page-1 .hand').addClass('moving');
-                }, 2000);
+                    $wrapper.find('.page-1 .arrow').addClass('show');
+                }, 1000);
             }, 300);
 
             new mo.Loader(sourceArr2, {
@@ -115,8 +124,17 @@ $(function() {
             $audio = $('#audio'),
             $music = $('#music'),
             audio = $audio[0];
-        audio.src = 'bgm.mp3';
-        audio.play();
+
+        // 播放背景音乐
+        $audio.on('play', function (e) {
+            $music.addClass('playing')
+        });
+        $audio.on('pause', function (e) {
+            $music.removeClass('playing')
+        });
+        $music.on('touchstart', function (e) {
+            $music.hasClass('playing') ? audio.pause() : audio.play();
+        });
 
         var startX,
             startY,
@@ -194,21 +212,36 @@ $(function() {
             }
         });
 
-        // 播放背景音乐
-        $audio.on('play', function (e) {
-            $music.addClass('playing')
-        });
-        $audio.on('pause', function (e) {
-            $music.removeClass('playing')
-        });
-        $music.on('touchstart', function (e) {
-            $music.hasClass('playing') ? audio.pause() : audio.play();
+        // 拆开邀请函
+        $('#end_wrap').on('touchstart', '#invitation, .hand', function (e) {
+            var $end_wrap = $('#end_wrap');
+            $end_wrap.find('#invitation').addClass('hide');
+            $end_wrap.find('#time_address').removeClass('hide');
+            $end_wrap.find('.hand').removeClass('press');
+            $end_wrap.find('.btn').addClass('active');
         });
 
-        // 拆开邀请函
-        $('#invitation').on('touchstart', function (e) {
-            $(this).addClass('hide');
-            $('#time_address').removeClass('hide');
+        // 播放视频
+        $('#btn_play').on('touchstart', function (e) {
+            var $video_wrap = $('#video_wrap'),
+                $video = $('#video');
+            $video_wrap.removeClass('hide');
+            setTimeout(function () {
+                $video_wrap.addClass('show');
+            }, 100);
+            $video.attr('src', 'video.mp4');
+            $video[0].play();
+            audio.pause();
+        });
+        $('#close').on('touchstart', function (e) {
+            var $video_wrap = $('#video_wrap'),
+                $video = $('#video');
+            $video_wrap.removeClass('show');
+            $video[0].pause();
+            setTimeout(function () {
+                $video_wrap.addClass('hide');
+                $video.attr('src', '');
+            }, 500);
         });
 
         // 分享发布会
@@ -248,8 +281,8 @@ $(function() {
         }
         $oldActive.removeClass('active');
         $newActive.removeClass('hide');
-        $oldActive.find('.hand').removeClass('moving');
-        $newActive.find('.hand').removeClass('moving');
+        $('#wrapper').find('.hand').removeClass('moving press');
+        $('#wrapper').find('.arrow').removeClass('show');
 
         $('#milestone').text($newActive.data('year') || '');
         var left = $newActive.data('left');
@@ -262,9 +295,6 @@ $(function() {
             $oldActive.addClass('hide');
             $newActive.addClass('active');
             $('#container').find('.door').removeAttr('style');
-            handTimeout = setTimeout(function () {
-                $newActive.find('.hand').addClass('moving');
-            }, $newActive.data('door') ? 2000 : 4000);
 
             if ($newActive.hasClass('end-wrap')) {
                 var $airplane = $newActive.find('.airplane');
@@ -301,12 +331,18 @@ $(function() {
                         $('#invitation').addClass('fly-in');
                         setTimeout(function () {
                             $('#invitation').removeClass('fly-in').addClass('flying');
+                            setTimeout(function () {
+                                $newActive.find('.hand').addClass('press');
+                                $newActive.find('.arrow').addClass('show');
+                            }, 500);
                         }, 1000);
                     }, 2300);
-                    setTimeout(function () {
-                        $('#end_wrap').find('.btn').addClass('active');
-                    }, 3300);
                 }, 1600);
+            } else {
+                handTimeout = setTimeout(function () {
+                    $newActive.find('.hand').addClass('moving');
+                    $newActive.find('.arrow').addClass('show');
+                }, 1000);
             }
         }, 500);
     }
