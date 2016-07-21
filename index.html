@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="author" content="erictian">
-    <meta name="description" content="YY直播北京朗园发布会">
-    <title>YY直播北京朗园发布会</title>
+    <meta name="description" content="YY LIVE北京朗园发布会">
+    <title>今天起，请叫我YY LIVE</title>
     <!-- build:css css/style.css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- endbuild -->
@@ -20,43 +20,55 @@
         <div id="container" class="container">
             <section class="page page-1 bg active" data-door="true" data-prev="null" data-next="page-2" data-left="0%" data-year="2008">
                 <div class="title bg"></div>
-                <div class="doorframe bg"></div>
+                <div class="doorframe bg">
+                    <div class="arrow bg"></div>
+                    <div class="hand"></div>
+                </div>
                 <div class="door bg"></div>
-                <div class="hand bg"></div>
             </section>
             <section class="page page-2 bg hide" data-prev="page-1" data-next="page-3" data-left="9%" data-year="2008">
                 <div class="title bg"></div>
-                <div class="hand bg"></div>
+                <div class="arrow bg"></div>
+                <div class="hand"></div>
             </section>
             <section class="page page-3 bg hide" data-door="true" data-prev="page-2" data-next="page-4" data-left="18%" data-year="2012">
                 <div class="title bg"></div>
-                <div class="doorframe bg"></div>
+                <div class="doorframe bg">
+                    <div class="arrow bg"></div>
+                    <div class="hand"></div>
+                </div>
                 <div class="door bg"></div>
-                <div class="hand bg"></div>
             </section>
             <section class="page page-4 bg hide" data-prev="page-3" data-next="page-5" data-left="27%" data-year="2012">
                 <div class="title bg"></div>
-                <div class="hand bg"></div>
+                <div class="arrow bg"></div>
+                <div class="hand"></div>
             </section>
             <section class="page page-5 bg hide" data-door="true" data-prev="page-4" data-next="page-6" data-left="36%" data-year="2014">
                 <div class="title bg"></div>
-                <div class="doorframe bg"></div>
+                <div class="doorframe bg">
+                    <div class="arrow bg"></div>
+                    <div class="hand"></div>
+                </div>
                 <div class="door bg"></div>
-                <div class="hand bg"></div>
             </section>
             <section class="page page-6 bg hide" data-prev="page-5" data-next="page-7" data-left="45%" data-year="2014">
                 <div class="title bg"></div>
-                <div class="hand bg"></div>
+                <div class="arrow bg"></div>
+                <div class="hand"></div>
             </section>
             <section class="page page-7 bg hide" data-door="true" data-prev="page-6" data-next="page-8" data-left="54%" data-year="2015">
                 <div class="title bg"></div>
-                <div class="doorframe bg"></div>
+                <div class="doorframe bg">
+                    <div class="arrow bg"></div>
+                    <div class="hand"></div>
+                </div>
                 <div class="door bg"></div>
-                <div class="hand bg"></div>
             </section>
             <section class="page page-8 bg end hide" data-prev="page-7" data-next="end-wrap" data-left="63%" data-year="2015">
                 <div class="title bg"></div>
-                <div class="hand bg"></div>
+                <div class="arrow bg"></div>
+                <div class="hand"></div>
             </section>
         </div>
         <div id="gear_wrap" class="gear-wrap bg pause cleafix">
@@ -78,13 +90,22 @@
             <div class="invitation-sm invitation-3 bg"></div>
             <div class="invitation-sm invitation-4 bg"></div>
             <div id="invitation" class="invitation bg"></div>
-            <div id="time_address" class="time-address bg hide"></div>
+            <div id="time_address" class="time-address bg hide">
+                <div id="btn_play" class="btn-play bg"></div>
+            </div>
+            <div class="hand"></div>
             <div id="btn_share" class="btn btn-share bg"></div>
             <div id="btn_back" class="btn btn-back bg"></div>
         </div>
-        <div id="share_wrap" class="share-wrap hide">点击右上角分享，敬请关注YY直播</div>
+        <div id="share_wrap" class="share-wrap hide">点击右上角分享，敬请关注YY LIVE</div>
+        <div id="video_wrap" class="video-wrap hide">
+            <div class="video-box">
+                <video id="video" class="video" src="" controls></video>
+                <div id="close" class="close">×</div>
+            </div>
+        </div>
         <div id="music" class="music playing">
-            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 64 64">
+            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="15 14 34 35">
                 <path d="M32.01 15.02c-9.39 0-17 7.61-17 17 0 9.388 7.61 17 17 17s17-7.612 17-17c0-9.39-7.612-17-17-17zm0 32c-8.285 0-15-6.716-15-15 0-8.284 6.715-15 15-15 8.283 0 15 6.716 15 15 0 8.284-6.717 15-15 15zm7.144-24.97c-.052-.007-.1-.03-.154-.03-.147 0-.284.035-.41.092l-9.677 1.88c-.082.016-.152.058-.227.092-.046.015-.09.032-.132.053-.017.01-.032.02-.048.033-.226.132-.388.344-.456.604-.004.012-.004.024-.007.036-.016.07-.043.135-.043.21v9.142c-1.057-.296-2.376-.125-3.584.58-2.02 1.182-2.95 3.384-2.074 4.917.875 1.534 3.223 1.82 5.242.64 1.646-.963 2.548-2.598 2.36-4.002.026-.09.056-.18.056-.28V25.815l8-1.554v7.902c-1.057-.296-2.376-.125-3.584.58-2.02 1.182-2.95 3.384-2.074 4.917.875 1.534 3.223 1.82 5.242.64 1.646-.963 2.548-2.598 2.36-4.002.026-.09.056-.18.056-.28v-11c0-.018-.01-.035-.01-.054 0-.037.014-.073.01-.11-.04-.467-.4-.78-.846-.803zM26.528 38.448c-1.01.59-2.065.654-2.357.143-.29-.512.292-1.405 1.303-1.996 1.01-.59 2.065-.654 2.356-.143.29.514-.292 1.406-1.302 1.997zm10-2c-1.01.59-2.065.654-2.357.143-.29-.512.292-1.405 1.303-1.996 1.01-.59 2.065-.654 2.356-.143.29.514-.292 1.406-1.302 1.997z"></path>
             </svg>
             <span></span>
@@ -104,33 +125,47 @@
     <script>
         // 分享参数
         var SHARE_OBJ = {
-            title: 'YY直播北京朗园发布会',
-            desc: 'YY直播北京朗园发布会',
+            title: '今天起，请叫我YY LIVE',
+            desc: '6月22日，YY直播正式升级YY LIVE！经典品牌，首度升级！',
             link: location.href,
-            imgUrl: 'http://h5.html5dw.com/warcraft-concert/images/thumbnail.jpg',
+            imgUrl: 'http://www.phboy.com/vintage-conference/images/thumbnail.jpg',
             success: function () { }
         };
 
-        wx.config({
-            debug: false,
-            appId: 'wxc277cec6a0f458d9',
-            timestamp: '1466235397',
-            nonceStr: 'TJvtBOut5UEM6man',
-            signature: 'fb0f29a3d679b981d1bb180e330ec21b1642c2ee',
-            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone']
-        });
-
-        wx.ready(function () {
-            // 分享到朋友圈
-            wx.onMenuShareTimeline(SHARE_OBJ);
-            // 分享给朋友
-            wx.onMenuShareAppMessage(SHARE_OBJ);
-            // 分享到QQ
-            wx.onMenuShareQQ(SHARE_OBJ);
-            // 分享到腾讯微博
-            wx.onMenuShareWeibo(SHARE_OBJ);
-            // 分享到QQ空间
-            wx.onMenuShareQZone(SHARE_OBJ);
+        $.ajax({
+            url:'http://h5.skyfish.me/weixin/wxjs.php',
+            data:{
+                'url': location.href,
+                'type': 'jsonp'
+            },
+            dataType: 'jsonp',
+            success: function(data) {
+                wx.config({
+                    appId: data.appId,
+                    timestamp: data.timestamp,
+                    nonceStr: data.nonceStr,
+                    signature: data.signature,
+                    jsApiList: [
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ',
+                        'onMenuShareWeibo',
+                        'onMenuShareQZone'
+                    ]
+                });
+                wx.ready(function () {
+                    // 分享到朋友圈
+                    wx.onMenuShareTimeline(SHARE_OBJ);
+                    // 分享给朋友
+                    wx.onMenuShareAppMessage(SHARE_OBJ);
+                    // 分享到QQ
+                    wx.onMenuShareQQ(SHARE_OBJ);
+                    // 分享到腾讯微博
+                    wx.onMenuShareWeibo(SHARE_OBJ);
+                    // 分享到QQ空间
+                    wx.onMenuShareQZone(SHARE_OBJ);
+                });
+            }
         });
     </script>
     <script>
